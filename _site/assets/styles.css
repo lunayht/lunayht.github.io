@@ -187,6 +187,8 @@
 .lineno::selection { background-color: transparent; }
 
 /* Other major browsers */
+table { width: 100%; }
+
 th { text-align: left; font-weight: normal; padding: 2px; }
 
 th.date { width: 25%; }
