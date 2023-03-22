@@ -5,7 +5,7 @@
 {% endif %}
 
 <img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 150px;">
-<h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed">{% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}</h1>
+<h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed"><a style="color: inherit;" href="/">{% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}</a></h1>
 <p class="mb-3 f4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
   {{ user.bio }}
 </p>
@@ -52,3 +52,5 @@
     {% endif %}
   </div>
 {% endif %}
+
+<h2 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed"><a style="color: inherit;" href="/cv">CV</a></h2>
