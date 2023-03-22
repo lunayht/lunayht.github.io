@@ -3,7 +3,19 @@
 @import url('https://unpkg.com/primer/build/build.css');
 @import 'highlight-syntax';
 
+th {
+  text-align: left;
+  font-weight: normal;
+  padding: 2px;
+}
 
+th.date {
+  width: 25%;
+}
+
+td {
+  padding: 5px;
+}
 // If a user adds a custom font, this component will stop it from bleeding into GitHub components:
 .github-component {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol !important;

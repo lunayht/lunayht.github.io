@@ -187,6 +187,12 @@
 .lineno::selection { background-color: transparent; }
 
 /* Other major browsers */
+th { text-align: left; font-weight: normal; padding: 2px; }
+
+th.date { width: 25%; }
+
+td { padding: 5px; }
+
 .github-component { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol !important; }
 
 .repo-language-color { filter: brightness(125%) !important; border-radius: 50%; display: inline-block; height: 12px; position: relative; top: 2px; width: 12px; }
