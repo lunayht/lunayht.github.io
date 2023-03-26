@@ -51,8 +51,5 @@ topics:
     web_url: https://projecteuler.net/about
     image_url: https://projecteuler.net/favicons/apple-touch-icon.png
 
-  # - name: Web design
-
   - name: Gödel, Escher, Bach (GEB)
     web_url: https://en.wikipedia.org/wiki/Gödel,_Escher,_Bach
-    # image_url: https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/41K3w2JFP1L._AC_UF1000,1000_QL80_.jpg
