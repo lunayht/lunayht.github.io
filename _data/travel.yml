@@ -121,6 +121,12 @@ places:
     status: been
     note: Neon, ramen, and organized chaos.
 
+  - name: Taiwan
+    lat: 25.0330
+    lng: 121.5654
+    status: been
+    note: Oyster noodles, buzzing night markets, and misty Alishan. 🦪🏞️
+
   # ── Want to go ── (edit these to your real bucket list!)
   - name: Paris, France
     lat: 48.8566
@@ -150,7 +156,7 @@ places:
     lat: 60.1699
     lng: 24.9384
     status: want
-    note: Northern lights and saunas. 🌌
+    note: Northern lights, Santa Claus Village and saunas. 🌌
 
   - name: Switzerland
     lat: 46.8182
@@ -193,3 +199,33 @@ places:
     lng: 4.9041
     status: want
     note: Canals, tulips, and warm stroopwafels. 🧇
+
+  - name: Iceland
+    lat: 64.1466
+    lng: -21.9426
+    status: want
+    note: Waterfalls, glaciers, and the northern lights. 🌋
+
+  - name: New Zealand
+    lat: -41.2865
+    lng: 174.7762
+    status: want
+    note: Middle-earth in real life. The Hobbit awaits! 🧙
+
+  - name: Serengeti, Tanzania
+    lat: -2.3333
+    lng: 34.8333
+    status: want
+    note: To witness the Great Migration. 🦁🦓
+
+  - name: Giza, Egypt
+    lat: 29.9792
+    lng: 31.1342
+    status: want
+    note: Standing before the Pyramids. 🐪
+
+  - name: Machu Picchu, Peru
+    lat: -13.1631
+    lng: -72.5450
+    status: want
+    note: The lost city of the Incas. 🏔️

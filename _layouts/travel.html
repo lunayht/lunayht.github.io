@@ -15,6 +15,11 @@
       <p class="f5"><a href="/" class="d-flex flex-items-center {% if site.style == 'dark' %}text-white{% endif %}">{% octicon chevron-left height:16 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Home %}Home</a></p>
 
       <h1 {% if site.style == 'dark' %}class="text-white"{% endif %}>Travel Map 🌍</h1>
+
+      <blockquote class="travel-quote {% if site.style == 'dark' %}text-white{% endif %}">
+        <span class="travel-quote-sub">Let your feet read what books never could.</span>
+      </blockquote>
+
       <p class="f4 mb-3 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">A little log of the places I've wandered to, and the ones still on my list.</p>
 
       <div class="d-flex flex-wrap mb-3 f5 {% if site.style == 'dark' %}text-white{% endif %}">
@@ -30,6 +35,24 @@
 </div>
 
 <style>
+  .travel-quote {
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 500;
+    color: #0366d6;
+    border-left: 3px solid #0366d6;
+    padding: 4px 0 4px 16px;
+    margin: 0 0 1.25rem 0;
+    line-height: 1.5;
+  }
+  .travel-quote-sub {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #6a737d;
+    margin-top: 4px;
+  }
   #travel-map {
     height: 480px;
     width: 100%;
