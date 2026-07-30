@@ -4,7 +4,7 @@
   {% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
 {% endif %}
 
-<img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 150px;">
+<img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 140px; display: block; margin-left: auto; margin-right: auto;">
 <h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed"><a style="color: inherit;" href="/">{% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}</a></h1>
 <p class="mb-3 f4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
   {{ user.bio }}
@@ -53,4 +53,5 @@
   </div>
 {% endif %}
 
-<h2 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed"><a style="color: inherit;" href="/cv">CV</a></h2>
+<div><h2 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed"><a style="color: inherit;" href="/cv">CV</a></h2></div>
+<div><h2 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed"><a style="color: inherit;" href="/travel">Travel Map</a></h2></div>

@@ -1,0 +1,94 @@
+{% include header.html %}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<div class="d-md-flex min-height-full {% unless site.style == 'dark' %}border-md-bottom{% endunless %}">
+  <div class="flex-self-stretch {% if site.style == 'dark' %}bg-gray-dark{% else %}border-md-right border-gray-light bg-white{% endif %} col-md-5 col-lg-4 col-xl-3 px-4 px-md-6 px-lg-7 py-6">
+    {% include masthead.html metadata=true %}
+  </div>
+
+  <div class="col-md-7 col-lg-8 col-xl-9 px-4 py-6 px-lg-7 border-top border-md-top-0 bg-gray-light" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
+    <div class="mx-auto" style="max-width: 900px;">
+      <p class="f5"><a href="/" class="d-flex flex-items-center {% if site.style == 'dark' %}text-white{% endif %}">{% octicon chevron-left height:16 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Home %}Home</a></p>
+
+      <h1 {% if site.style == 'dark' %}class="text-white"{% endif %}>Travel Map 🌍</h1>
+      <p class="f4 mb-3 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">A little log of the places I've wandered to, and the ones still on my list.</p>
+
+      <div class="d-flex flex-wrap mb-3 f5 {% if site.style == 'dark' %}text-white{% endif %}">
+        <span class="mr-4"><span class="travel-dot" style="background:#2ea44f;"></span> Been there</span>
+        <span><span class="travel-dot" style="background:#dbab09;"></span> Want to go</span>
+      </div>
+
+      <div id="travel-map"></div>
+
+      <p class="f6 mt-2 text-gray">Tip: scroll-zoom is off — use the + / − buttons or pinch to zoom. Click a pin for the story.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  #travel-map {
+    height: 480px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e1e4e8;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    z-index: 0;
+  }
+  .travel-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+  }
+  .leaflet-popup-content {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.9rem;
+  }
+  .leaflet-popup-content b { font-size: 0.95rem; }
+</style>
+
+<script>
+  var places = [
+    {% for p in site.data.travel.places %}
+    {
+      name: {{ p.name | jsonify }},
+      lat: {{ p.lat }},
+      lng: {{ p.lng }},
+      status: {{ p.status | jsonify }},
+      note: {{ p.note | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  var map = L.map('travel-map', { scrollWheelZoom: false }).setView([25, 60], 2);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    maxZoom: 18
+  }).addTo(map);
+
+  var colors = { been: '#2ea44f', want: '#dbab09' };
+
+  places.forEach(function (p) {
+    L.circleMarker([p.lat, p.lng], {
+      radius: 8,
+      fillColor: colors[p.status] || '#0366d6',
+      color: '#ffffff',
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.95
+    })
+    .addTo(map)
+    .bindPopup('<b>' + p.name + '</b>' + (p.note ? '<br>' + p.note : ''));
+  });
+</script>
+
+{% include footer.html %}
