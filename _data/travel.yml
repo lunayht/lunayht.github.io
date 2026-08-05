@@ -229,3 +229,9 @@ places:
     lng: -72.5450
     status: want
     note: The lost city of the Incas. 🏔️
+
+  - name: Antarctica
+    lat: -75.2509
+    lng: -0.0713
+    status: want
+    note: The seventh continent — penguins, icebergs, and endless white. 🐧🧊
